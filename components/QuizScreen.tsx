@@ -2,14 +2,12 @@
 
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-// Definimos o formato de um objeto de pergunta para reutilizar o tipo
 type Question = {
   question: string;
   options: string[];
   correctAnswer: string;
 };
 
-// Definimos o formato exato das props que o componente espera
 type QuizScreenProps = {
   currentQuestion: Question;
   selectedOption: string | null;
@@ -18,7 +16,6 @@ type QuizScreenProps = {
   onNextQuestion: () => void;
 };
 
-// Aplicamos a tipagem aqui na assinatura da função
 export default function QuizScreen({
   currentQuestion,
   selectedOption,
@@ -26,7 +23,6 @@ export default function QuizScreen({
   onOptionPress,
   onNextQuestion,
 }: QuizScreenProps) {
-  // Evita o erro caso a pergunta chegue como undefined por algum atraso de renderização
   if (!currentQuestion) {
     return null;
   }
@@ -43,7 +39,6 @@ export default function QuizScreen({
 
   return (
     <View style={styles.container}>
-      {/* A View do placar foi removida daqui, pois a lógica de placar agora está no componente pai */}
       <View style={styles.questionContainer}>
         <Text style={styles.questionText}>{currentQuestion.question}</Text>
       </View>
@@ -70,7 +65,6 @@ export default function QuizScreen({
   );
 }
 
-// Os estilos continuam os mesmos
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#f0f8ff", padding: 16 },
   questionContainer: {

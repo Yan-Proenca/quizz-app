@@ -1,22 +1,102 @@
 [
   {
-    "question": "Qual dos seguintes é um Hook do React?",
-    "options": ["useState", "useReducer", "useEffect", "Todos acima"],
-    "correctAnswer": "Todos acima"
+    "question": "Ao utilizar uma IA para ajudar nos trabalhos escolares ou acadêmicos, qual é a postura correta?",
+    "options": [
+      "Copiar e colar o texto gerado sem checar as fontes.",
+      "Usar como ferramenta de apoio, verificando as informações e citando o uso da IA.",
+      "Entregar o trabalho como se fosse 100% de sua autoria.",
+      "Gerar respostas falsas sem se preocupar com a precisão."
+    ],
+    "correctAnswer": "Usar como ferramenta de apoio, verificando as informações e citando o uso da IA."
   },
   {
-    "question": "Qual componente é usado para exibir texto no React Native?",
-    "options": ["<TextView>", "<p>", "<Text>", "<Label>"],
-    "correctAnswer": "<Text>"
+    "question": "O que você deve fazer ao enviar dados ou perguntas para ferramentas públicas de Inteligência Artificial?",
+    "options": [
+      "Inserir dados pessoais sensíveis, como senhas e documentos.",
+      "Compartilhar informações confidenciais de terceiros.",
+      "Proteger sua privacidade, evitando enviar dados pessoais e confidenciais.",
+      "Publicar informações bancárias para obter análises financeiras."
+    ],
+    "correctAnswer": "Proteger sua privacidade, evitando enviar dados pessoais e confidenciais."
   },
   {
-    "question": "No Flexbox do React Native, qual é o valor padrão de `flexDirection`?",
-    "options": ["row", "column", "row-reverse", "column-reverse"],
-    "correctAnswer": "column"
+    "question": "Como devemos lidar com imagens, áudios ou vídeos gerados por IA (Deepfakes)?",
+    "options": [
+      "Compartilhar imediatamente para ganhar seguidores.",
+      "Validar a veracidade do conteúdo antes de repassar, evitando espalhar desinformação.",
+      "Usar para criar notícias falsas sobre outras pessoas.",
+      "Ignorar o impacto que conteúdos manipulados podem causar na sociedade."
+    ],
+    "correctAnswer": "Validar a veracidade do conteúdo antes de repassar, evitando espalhar desinformação."
   },
   {
-    "question": "Qual arquivo de configuração define o nome e o ícone de um app Expo?",
-    "options": ["package.json", "tsconfig.json", "app.json", "expo.config.js"],
-    "correctAnswer": "app.json"
+    "question": "Qual é o dever do usuário em relação aos viéses e preconceitos que podem surgir em respostas da IA?",
+    "options": [
+      "Aceitar qualquer resposta sem questionar a ética do conteúdo.",
+      "Usar a IA para gerar discursos de ódio.",
+      "Analisar criticamente as respostas e relatar conteúdos preconceituosos aos desenvolvedores.",
+      "Considerar que a IA sempre está 100% certa e isenta de erros."
+    ],
+    "correctAnswer": "Analisar criticamente as respostas e relatar conteúdos preconceituosos aos desenvolvedores."
+  },
+  {
+    "question": "Ao utilizar Inteligência Artificial Generativa para criar arte ou textos, qual dever ético deve ser respeitado?",
+    "options": [
+      "Respeitar os direitos autorais e dar o devido crédito às fontes originais.",
+      "Reivindicar direitos autorais sobre trabalhos plagiados de artistas humanos.",
+      "Utilizar a tecnologia para prejudicar o trabalho de criadores independentes.",
+      "Ignorar licenças e termos de uso das ferramentas."
+    ],
+    "correctAnswer": "Respeitar os direitos autorais e dar o devido crédito às fontes originais."
+  },
+  {
+    "question": "Qual é a responsabilidade do usuário ao usar IA para tomar decisões que afetam outras pessoas?",
+    "options": [
+      "Delegar 100% da responsabilidade para o algoritmo e ignorar o fator humano.",
+      "Garantir a supervisão humana e usar a IA apenas como auxílio para uma decisão justa.",
+      "Usar a IA para justificar discriminações em processos seletivos.",
+      "Ignorar os erros cometidos pelo sistema por ser uma tecnologia avançada."
+    ],
+    "correctAnswer": "Garantir a supervisão humana e usar a IA apenas como auxílio para uma decisão justa."
+  },
+  {
+    "question": "Quando um texto ou conteúdo visual é gerado por Inteligência Artificial, qual é a boa prática de transparência?",
+    "options": [
+      "Ocultar que a IA foi utilizada para parecer que foi feito manualmente.",
+      "Informar claramente ao público que o conteúdo teve o auxílio ou foi gerado por IA.",
+      "Mentir sobre o tempo gasto para criar o material.",
+      "Apagar qualquer marca d'água ou aviso automático de IA do arquivo."
+    ],
+    "correctAnswer": "Informar claramente ao público que o conteúdo teve o auxílio ou foi gerado por IA."
+  },
+  {
+    "question": "O que fazer quando a IA apresenta uma resposta incoerente ou inventa fatos (alucinação de IA)?",
+    "options": [
+      "Confiar cegamente na resposta só porque foi gerada por um computador.",
+      "Checar a informação em fontes oficiais e confiáveis antes de utilizá-la.",
+      "Espalhar a informação errada como se fosse uma verdade absoluta.",
+      "Culpar outros usuários pelas falhas do sistema."
+    ],
+    "correctAnswer": "Checar a informação em fontes oficiais e confiáveis antes de utilizá-la."
+  },
+  {
+    "question": "Qual é a atitude correta em relação ao impacto ambiental do processamento de modelos de IA?",
+    "options": [
+      "Fazer requisições desnecessárias e repetitivas sem nenhum objetivo prático.",
+      "Usar as ferramentas com conscientização, buscando eficiência para evitar desperdício computacional.",
+      "Ignorar completamente o consumo de energia dos servidores.",
+      "Deixar scripts automatizados gerando conteúdos ininterruptos sem utilidade."
+    ],
+    "correctAnswer": "Usar as ferramentas com conscientização, buscando eficiência para evitar desperdício computacional."
+  },
+  {
+    "question": "Ao encontrar uma brecha ou falha de segurança em uma ferramenta de IA, qual o dever do usuário?",
+    "options": [
+      "Explorar a falha para roubar dados de outros usuários.",
+      "Notificar os desenvolvedores de forma responsável para que o problema seja corrigido.",
+      "Vender o método de invasão na internet.",
+      "Utilizar a brecha para infectar o sistema com vírus."
+    ],
+    "correctAnswer": "Notificar os desenvolvedores de forma responsável para que o problema seja corrigido."
   }
 ]

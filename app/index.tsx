@@ -21,7 +21,6 @@ export default function HomePage() {
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  // Reseta todos os dados da partida
   const resetGame = () => {
     setCurrentQuestionIndex(0);
     setSelectedOption(null);
@@ -29,13 +28,11 @@ export default function HomePage() {
     setScore(0);
   };
 
-  // Inicia uma nova partida
   const handleStartQuiz = () => {
     resetGame();
     setGameStage("quiz");
   };
 
-  // Seleciona uma alternativa
   const handleOptionPress = (option: string) => {
     if (currentQuestion && option === currentQuestion.correctAnswer) {
       setScore((prev) => prev + 1);
@@ -45,7 +42,6 @@ export default function HomePage() {
     setIsOptionsDisabled(true);
   };
 
-  // Avança para a próxima pergunta
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
@@ -57,7 +53,6 @@ export default function HomePage() {
     }
   };
 
-  // Começa outra tentativa
   const handlePlayAgain = () => {
     resetGame();
     setGameStage("quiz");

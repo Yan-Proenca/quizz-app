@@ -1,10 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-// Usando TypeScript para definir os "tipos" de props que esperamos receber
 type ResultScreenProps = {
   score: number;
   totalQuestions: number;
-  onPlayAgain: () => void; // Esperamos receber uma função para o botão
+  onPlayAgain: () => void;
 };
 
 export default function ResultScreen({
