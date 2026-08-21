@@ -1,4 +1,3 @@
-Aqui está um modelo completo de **`README.md`** pronto para o seu projeto, formatado com boas práticas de documentação para repositórios no GitHub ou GitLab:
 
 ---
 
