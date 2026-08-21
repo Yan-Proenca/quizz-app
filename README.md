@@ -146,5 +146,3 @@ Para adicionar ou alterar as perguntas do aplicativo, basta modificar o arquivo 
 ```
 
 ```
-
-```
