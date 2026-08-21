@@ -1,25 +1,27 @@
-// app/index.tsx
-
 import { useState } from "react";
 import QuizScreen from "../components/QuizScreen";
 import ResultScreen from "../components/ResultScreen";
+import StartScreen from "../components/StartScreen";
 import questions from "../questions.json";
 
 export default function HomePage() {
-  // Todos os estados agora vivem aqui, no componente pai
+  const [gameStage, setGameStage] = useState<"start" | "quiz" | "result">(
+    "start",
+  );
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isOptionsDisabled, setIsOptionsDisabled] = useState(false);
   const [score, setScore] = useState(0);
 
-  // NOVO: Estado para controlar se o quiz terminou
-  const [isQuizFinished, setIsQuizFinished] = useState(false);
-
   const currentQuestion = questions[currentQuestionIndex];
 
+  const handleStartQuiz = () => {
+    setGameStage("quiz");
+  };
+
   const handleOptionPress = (option: string) => {
-    if (option === currentQuestion.correctAnswer) {
-      setScore(score + 1);
+    if (currentQuestion && option === currentQuestion.correctAnswer) {
+      setScore((prev) => prev + 1);
     }
     setSelectedOption(option);
     setIsOptionsDisabled(true);
@@ -27,28 +29,37 @@ export default function HomePage() {
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex((prev) => prev + 1);
       setSelectedOption(null);
       setIsOptionsDisabled(false);
     } else {
-      // Quando as perguntas acabam, mudamos o estado para finalizado
-      setIsQuizFinished(true);
+      setGameStage("result");
     }
   };
 
   const handlePlayAgain = () => {
-    // Lógica que será implementada no próximo capítulo
-    console.log("Reiniciando o jogo...");
+    setScore(0);
+    setCurrentQuestionIndex(0);
+    setSelectedOption(null);
+    setIsOptionsDisabled(false);
+    setGameStage("quiz");
   };
 
-  // Renderização Condicional: decide qual tela mostrar
-  return isQuizFinished ? (
-    <ResultScreen
-      score={score}
-      totalQuestions={questions.length}
-      onPlayAgain={handlePlayAgain}
-    />
-  ) : (
+  if (gameStage === "start") {
+    return <StartScreen onStart={handleStartQuiz} />;
+  }
+
+  if (gameStage === "result") {
+    return (
+      <ResultScreen
+        score={score}
+        totalQuestions={questions.length}
+        onPlayAgain={handlePlayAgain}
+      />
+    );
+  }
+
+  return (
     <QuizScreen
       currentQuestion={currentQuestion}
       selectedOption={selectedOption}

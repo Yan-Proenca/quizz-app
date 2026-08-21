@@ -26,15 +26,17 @@ export default function QuizScreen({
   onOptionPress,
   onNextQuestion,
 }: QuizScreenProps) {
+  // Evita o erro caso a pergunta chegue como undefined por algum atraso de renderização
+  if (!currentQuestion) {
+    return null;
+  }
+
   const getOptionStyle = (option: string) => {
     if (selectedOption) {
       const isCorrect = option === currentQuestion.correctAnswer;
-      if (isCorrect) {
-        return styles.correctOption;
-      }
-      if (option === selectedOption && !isCorrect) {
+      if (isCorrect) return styles.correctOption;
+      if (option === selectedOption && !isCorrect)
         return styles.incorrectOption;
-      }
     }
     return {};
   };
