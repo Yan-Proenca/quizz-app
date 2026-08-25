@@ -125,11 +125,11 @@ const styles = StyleSheet.create({
     color: "#2C2C2E",
   },
   correctOption: {
-    borderColor: "#34C759",
+    borderColor: "#3f6005",
     backgroundColor: "#E8F9ED",
   },
   correctOptionText: {
-    color: "#1E7E34",
+    color: "#3f6005",
   },
   incorrectOption: {
     borderColor: "#FF3B30",
@@ -142,12 +142,12 @@ const styles = StyleSheet.create({
     height: 54,
   },
   nextButton: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#3f6005",
     height: "100%",
     borderRadius: 14,
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: "#007AFF",
+    shadowColor: "#223206",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.25,
     shadowRadius: 8,
