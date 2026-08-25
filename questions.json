@@ -1,77 +1,92 @@
 [
   {
-    "question": "Qual componente é conhecido como o 'cérebro' do computador, responsável por processar as informações?",
+    "question": "Quem é o Patrono do Exército Brasileiro?",
     "options": [
-      "Placa de Vídeo (GPU)",
-      "Processador (CPU)",
-      "Memória RAM",
-      "Disco Rígido (HD)"
+      "Luís Alves de Lima e Silva (Duque de Caxias)",
+      "Manuel Luís Osório (Marquês do Herval)",
+      "Joaquim Marques Lisboa (Marquês de Tamandaré)",
+      "Alberto Santos Dumont"
     ],
-    "correctAnswer": "Processador (CPU)"
+    "correctAnswer": "Luís Alves de Lima e Silva (Duque de Caxias)"
   },
   {
-    "question": "Qual componente armazena os dados temporariamente enquanto os programas estão abertos?",
-    "options": ["Memória RAM", "Fonte de Alimentação", "Placa-mãe", "SSD"],
-    "correctAnswer": "Memória RAM"
-  },
-  {
-    "question": "Onde ficam conectados diretamente todos os componentes internos do computador?",
-    "options": ["Gabinete", "Placa de Vídeo", "Placa-mãe", "Monitor"],
-    "correctAnswer": "Placa-mãe"
-  },
-  {
-    "question": "Qual dispositivo é responsável por armazenar arquivos, fotos e o sistema operacional de forma permanente?",
-    "options": ["Memória RAM", "SSD / HD", "Cooler", "Processador"],
-    "correctAnswer": "SSD / HD"
-  },
-  {
-    "question": "Qual componente é responsável por fornecer energia elétrica para todas as peças do computador?",
+    "question": "Qual evento histórico é considerado o berço do Exército Brasileiro?",
     "options": [
-      "Fonte de Alimentação",
-      "Bateria CMOS",
-      "Filtro de Linha",
-      "Processador"
+      "Batalha de Guararapes (1648)",
+      "Independência do Brasil (1822)",
+      "Guerra do Paraguai (1864)",
+      "Proclamação da República (1889)"
     ],
-    "correctAnswer": "Fonte de Alimentação"
+    "correctAnswer": "Batalha de Guararapes (1648)"
   },
   {
-    "question": "Qual hardware é focado no processamento gráfico e renderização de imagens para jogos e vídeos?",
+    "question": "Em que data é comemorado o Dia do Exército Brasileiro?",
     "options": [
-      "Placa de Som",
-      "Processador (CPU)",
-      "Placa de Vídeo (GPU)",
-      "Memória Cache"
+      "19 de abril",
+      "25 de agosto",
+      "7 de setembro",
+      "15 de novembro"
     ],
-    "correctAnswer": "Placa de Vídeo (GPU)"
+    "correctAnswer": "19 de abril"
   },
   {
-    "question": "Qual é a função do Cooler dentro do computador?",
+    "question": "Qual é a Arma do Exército Brasileiro conhecida como a 'Rainha das Armas'?",
+    "options": ["Infanteria", "Cavalaria", "Artilharia", "Engenharia"],
+    "correctAnswer": "Infanteria"
+  },
+  {
+    "question": "Quem é o Patrono da Arma de Cavalaria do Exército Brasileiro?",
     "options": [
-      "Aumentar a velocidade da internet",
-      "Resfriar e evitar o superaquecimento dos componentes",
-      "Melhorar a qualidade do áudio",
-      "Armazenar mais dados"
+      "Marechal Manuel Luís Osório",
+      "Lopo de Souza",
+      "Emílio Luís Mallet",
+      "Antônio de Sampaio"
     ],
-    "correctAnswer": "Resfriar e evitar o superaquecimento dos componentes"
+    "correctAnswer": "Marechal Manuel Luís Osório"
   },
   {
-    "question": "Qual destes é considerado um dispositivo de ENTRADA de dados?",
-    "options": ["Monitor", "Teclado", "Caixa de som", "Impressora"],
-    "correctAnswer": "Teclado"
+    "question": "Qual dos postos abaixo pertence ao oficialato do Exército e está imediatamente acima de Capitão?",
+    "options": ["Major", "Tenente", "Sargento", "Cabo"],
+    "correctAnswer": "Major"
   },
   {
-    "question": "Qual destes é um dispositivo de SAÍDA de dados?",
-    "options": ["Mouse", "Microfone", "Monitor", "Webcam"],
-    "correctAnswer": "Monitor"
-  },
-  {
-    "question": "O que acontece com os dados salvos na memória RAM quando o computador é desligado?",
+    "question": "Qual foi a força expedicionária enviada pelo Brasil para combater na Segunda Guerra Mundial?",
     "options": [
-      "São apagados completamente",
-      "Ficam salvos para o próximo uso",
-      "São enviados para a nuvem",
-      "Viram um arquivo de backup"
+      "Força Expedicionária Brasileira (FEB)",
+      "Força Armada de Paz (FAP)",
+      "Brigada de Operações Especiais (BOE)",
+      "Corpo de Fuzileiros Navais (CFN)"
     ],
-    "correctAnswer": "São apagados completamente"
+    "correctAnswer": "Força Expedicionária Brasileira (FEB)"
+  },
+  {
+    "question": "Qual é o lema oficial do Exército Brasileiro?",
+    "options": [
+      "Braço Forte - Mão Amiga",
+      "Ordem e Progresso",
+      "Pátria Amada Brasil",
+      "Sempre Alerta"
+    ],
+    "correctAnswer": "Braço Forte - Mão Amiga"
+  },
+  {
+    "question": "Quem é o Patrono da Arma de Artilharia do Exército Brasileiro?",
+    "options": [
+      "Marechal Emílio Luís Mallet",
+      "Brigadeiro Sampaio",
+      "Duque de Caxias",
+      "Roberto Trompowsky"
+    ],
+    "correctAnswer": "Marechal Emílio Luís Mallet"
+  },
+  {
+    "question": "Qual é a mais alta patente atingível em tempo de paz no Exército Brasileiro?",
+    "options": [
+      "General de Exército",
+      "Marechal",
+      "General de Divisão",
+      "General de Brigada"
+    ],
+    "correctAnswer": "General de Exército"
   }
 ]
