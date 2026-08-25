@@ -1,3 +1,4 @@
+[iPhone-13-PRO-localhost-b81_xznnwa--p4.webm](https://github.com/user-attachments/assets/b15159dc-2ba4-4fa6-94b5-6711031675d7)
 Aqui está o seu `README.md` atualizado, incorporando a nova seção detalhada com as funcionalidades recentemente desenvolvidas (Menu de Start/Tela Inicial, Layout de Ambiente com SafeArea, Navegação por Expo Router e Design System consistente), além dos desafios e aprendizados técnicos envolvidos.
 
 ````markdown
@@ -77,6 +78,12 @@ A aplicação foi estruturada seguindo o conceito de **máquina de estados para 
 ├── questions.json        # Base de dados com as perguntas e respostas
 └── README.md             # Documentação do projeto
 ```
+
+
+
+
+[iPhone-13-PRO-localhost-b81_xznnwa--p4.webm](https://github.com/user-attachments/assets/4523e340-c116-4ef6-8e94-63ef68205c0c)
+
 ````
 
 ---
