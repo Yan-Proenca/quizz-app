@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   questionCard: {
     minHeight: 140,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#3f6005",
     borderRadius: 16,
     padding: 20,
     justifyContent: "center",
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   questionText: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#1C1C1E",
+    color: "#dddde1",
     textAlign: "center",
     lineHeight: 28,
   },
