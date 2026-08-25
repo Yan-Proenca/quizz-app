@@ -11,27 +11,29 @@ export default function StartScreen({
 }: StartScreenProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Quiz Do Contra</Text>
-
-      <Text style={styles.subtitle}>Teste seus sabor conhecimento!</Text>
+      <View style={styles.header}>
+        <Text style={styles.title}>Quiz Do Contra</Text>
+        <Text style={styles.subtitle}>Teste seus conhecimentos!</Text>
+      </View>
 
       <View style={styles.infoContainer}>
         <View style={styles.infoBox}>
           <Text style={styles.infoLabel}>Perguntas</Text>
-
           <Text style={styles.infoValue}>{totalQuestions}</Text>
         </View>
 
         <View style={styles.infoBox}>
           <Text style={styles.infoLabel}>Tentativas</Text>
-
           <Text style={styles.infoValue}>∞</Text>
-
           <Text style={styles.infiniteText}>Infinitas</Text>
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={onStartGame}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={onStartGame}
+        activeOpacity={0.8}
+      >
         <Text style={styles.buttonText}>Iniciar Jogo</Text>
       </TouchableOpacity>
     </View>
@@ -41,79 +43,74 @@ export default function StartScreen({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#f0f8ff",
-    padding: 24,
+    paddingVertical: 32,
   },
-
+  header: {
+    alignItems: "center",
+  },
   title: {
-    fontSize: 40,
-    fontWeight: "bold",
-    color: "#333",
-    marginBottom: 10,
+    fontSize: 36,
+    fontWeight: "800",
+    color: "#1C1C1E",
+    marginBottom: 8,
+    textAlign: "center",
   },
-
   subtitle: {
-    fontSize: 18,
-    color: "#666",
-    marginBottom: 40,
+    fontSize: 16,
+    color: "#6E6E73",
+    textAlign: "center",
   },
-
   infoContainer: {
     flexDirection: "row",
-    gap: 15,
-    marginBottom: 40,
+    gap: 16,
   },
-
   infoBox: {
-    width: 140,
-    minHeight: 120,
-    backgroundColor: "#ffffff",
-    borderRadius: 15,
+    width: 130,
+    height: 120,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 16,
     justifyContent: "center",
     alignItems: "center",
-    padding: 15,
-
+    padding: 12,
     shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.15,
-    shadowRadius: 5,
-
-    elevation: 4,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 3,
   },
-
   infoLabel: {
-    fontSize: 16,
-    color: "#666",
-    marginBottom: 8,
+    fontSize: 14,
+    fontWeight: "600",
+    color: "#8E8E93",
+    marginBottom: 4,
   },
-
   infoValue: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#007BFF",
+    fontSize: 28,
+    fontWeight: "700",
+    color: "#007AFF",
   },
-
   infiniteText: {
-    fontSize: 13,
-    color: "#777",
+    fontSize: 12,
+    color: "#8E8E93",
     marginTop: 2,
   },
-
   button: {
-    backgroundColor: "#007BFF",
+    backgroundColor: "#007AFF",
     paddingVertical: 16,
-    paddingHorizontal: 50,
-    borderRadius: 12,
+    width: "100%",
+    borderRadius: 14,
+    alignItems: "center",
+    shadowColor: "#007AFF",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 4,
   },
-
   buttonText: {
-    color: "#ffffff",
-    fontSize: 20,
-    fontWeight: "bold",
+    color: "#FFFFFF",
+    fontSize: 18,
+    fontWeight: "700",
   },
 });

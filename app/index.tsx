@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
 import QuizScreen from "../components/QuizScreen";
 import ResultScreen from "../components/ResultScreen";
@@ -58,35 +59,52 @@ export default function HomePage() {
     setGameStage("quiz");
   };
 
-  // Tela inicial
-  if (gameStage === "start") {
+  const renderContent = () => {
+    if (gameStage === "start") {
+      return (
+        <StartScreen
+          totalQuestions={questions.length}
+          onStartGame={handleStartQuiz}
+        />
+      );
+    }
+
+    if (gameStage === "result") {
+      return (
+        <ResultScreen
+          score={score}
+          totalQuestions={questions.length}
+          onPlayAgain={handlePlayAgain}
+        />
+      );
+    }
+
     return (
-      <StartScreen
-        totalQuestions={questions.length}
-        onStartGame={handleStartQuiz}
+      <QuizScreen
+        currentQuestion={currentQuestion}
+        selectedOption={selectedOption}
+        isOptionsDisabled={isOptionsDisabled}
+        onOptionPress={handleOptionPress}
+        onNextQuestion={handleNextQuestion}
       />
     );
-  }
+  };
 
-  // Tela de resultado
-  if (gameStage === "result") {
-    return (
-      <ResultScreen
-        score={score}
-        totalQuestions={questions.length}
-        onPlayAgain={handlePlayAgain}
-      />
-    );
-  }
-
-  // Tela do quiz
   return (
-    <QuizScreen
-      currentQuestion={currentQuestion}
-      selectedOption={selectedOption}
-      isOptionsDisabled={isOptionsDisabled}
-      onOptionPress={handleOptionPress}
-      onNextQuestion={handleNextQuestion}
-    />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>{renderContent()}</View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#F5F5F7",
+  },
+  content: {
+    flex: 1,
+    paddingHorizontal: 20,
+    justifyContent: "center",
+  },
+});

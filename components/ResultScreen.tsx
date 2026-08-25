@@ -13,12 +13,19 @@ export default function ResultScreen({
 }: ResultScreenProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Fim de Jogo!</Text>
-      <Text style={styles.scoreText}>
-        Você acertou {score} de {totalQuestions} perguntas!
-      </Text>
+      <View style={styles.card}>
+        <Text style={styles.title}>Fim de Jogo!</Text>
+        <Text style={styles.scoreLabel}>Sua pontuação final:</Text>
+        <Text style={styles.scoreValue}>
+          {score} / {totalQuestions}
+        </Text>
+      </View>
 
-      <TouchableOpacity style={styles.button} onPress={onPlayAgain}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={onPlayAgain}
+        activeOpacity={0.8}
+      >
         <Text style={styles.buttonText}>Jogar Novamente</Text>
       </TouchableOpacity>
     </View>
@@ -28,30 +35,54 @@ export default function ResultScreen({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#f0f8ff",
+    paddingVertical: 32,
+  },
+  card: {
+    width: "100%",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 20,
+    padding: 32,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 3,
+    marginTop: 40,
   },
   title: {
     fontSize: 32,
-    fontWeight: "bold",
-    marginBottom: 20,
-    color: "#333",
+    fontWeight: "800",
+    color: "#1C1C1E",
+    marginBottom: 16,
   },
-  scoreText: {
-    fontSize: 24,
-    marginBottom: 40,
-    color: "#555",
+  scoreLabel: {
+    fontSize: 16,
+    color: "#6E6E73",
+    marginBottom: 8,
+  },
+  scoreValue: {
+    fontSize: 48,
+    fontWeight: "800",
+    color: "#007AFF",
   },
   button: {
-    backgroundColor: "#007BFF",
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 12,
+    backgroundColor: "#007AFF",
+    paddingVertical: 16,
+    width: "100%",
+    borderRadius: 14,
+    alignItems: "center",
+    shadowColor: "#007AFF",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 4,
   },
   buttonText: {
-    color: "#ffffff",
+    color: "#FFFFFF",
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: "700",
   },
 });

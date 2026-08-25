@@ -1,5 +1,3 @@
-// components/QuizScreen.tsx
-
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 type Question = {
@@ -23,9 +21,7 @@ export default function QuizScreen({
   onOptionPress,
   onNextQuestion,
 }: QuizScreenProps) {
-  if (!currentQuestion) {
-    return null;
-  }
+  if (!currentQuestion) return null;
 
   const getOptionStyle = (option: string) => {
     if (selectedOption) {
@@ -37,9 +33,19 @@ export default function QuizScreen({
     return {};
   };
 
+  const getOptionTextStyle = (option: string) => {
+    if (selectedOption) {
+      const isCorrect = option === currentQuestion.correctAnswer;
+      if (isCorrect) return styles.correctOptionText;
+      if (option === selectedOption && !isCorrect)
+        return styles.incorrectOptionText;
+    }
+    return {};
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.questionContainer}>
+      <View style={styles.questionCard}>
         <Text style={styles.questionText}>{currentQuestion.question}</Text>
       </View>
 
@@ -50,57 +56,109 @@ export default function QuizScreen({
             style={[styles.option, getOptionStyle(option)]}
             onPress={() => onOptionPress(option)}
             disabled={isOptionsDisabled}
+            activeOpacity={0.7}
           >
-            <Text style={styles.optionText}>{option}</Text>
+            <Text style={[styles.optionText, getOptionTextStyle(option)]}>
+              {option}
+            </Text>
           </TouchableOpacity>
         ))}
       </View>
 
-      {selectedOption && (
-        <TouchableOpacity style={styles.nextButton} onPress={onNextQuestion}>
-          <Text style={styles.nextButtonText}>Próxima Pergunta</Text>
-        </TouchableOpacity>
-      )}
+      <View style={styles.footer}>
+        {selectedOption ? (
+          <TouchableOpacity
+            style={styles.nextButton}
+            onPress={onNextQuestion}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.nextButtonText}>Próxima Pergunta</Text>
+          </TouchableOpacity>
+        ) : (
+          <View style={styles.buttonPlaceholder} />
+        )}
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f0f8ff", padding: 16 },
-  questionContainer: {
+  container: {
     flex: 1,
-    backgroundColor: "#ffffff",
-    borderRadius: 12,
-    padding: 16,
+    paddingVertical: 16,
+    justifyContent: "space-between",
+  },
+  questionCard: {
+    minHeight: 140,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 16,
+    padding: 20,
     justifyContent: "center",
-    marginBottom: 20,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 3,
   },
-  questionText: { fontSize: 20, fontWeight: "bold", textAlign: "center" },
-  optionsContainer: { flex: 1, justifyContent: "space-around" },
+  questionText: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: "#1C1C1E",
+    textAlign: "center",
+    lineHeight: 28,
+  },
+  optionsContainer: {
+    gap: 12,
+    marginVertical: 20,
+  },
   option: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#FFFFFF",
     padding: 16,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: "#e0e0e0",
+    borderRadius: 14,
+    borderWidth: 1.5,
+    borderColor: "#E5E5EA",
   },
-  optionText: { fontSize: 18 },
+  optionText: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#2C2C2E",
+  },
   correctOption: {
-    borderColor: "#4CAF50",
-    backgroundColor: "#D4EDDA",
-    borderWidth: 2,
+    borderColor: "#34C759",
+    backgroundColor: "#E8F9ED",
+  },
+  correctOptionText: {
+    color: "#1E7E34",
   },
   incorrectOption: {
-    borderColor: "#F44336",
-    backgroundColor: "#F8D7DA",
-    borderWidth: 2,
+    borderColor: "#FF3B30",
+    backgroundColor: "#FEEBEE",
+  },
+  incorrectOptionText: {
+    color: "#B00020",
+  },
+  footer: {
+    height: 54,
   },
   nextButton: {
-    backgroundColor: "#007BFF",
-    padding: 15,
-    borderRadius: 12,
-    marginTop: 20,
+    backgroundColor: "#007AFF",
+    height: "100%",
+    borderRadius: 14,
+    justifyContent: "center",
     alignItems: "center",
+    shadowColor: "#007AFF",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 4,
   },
-  nextButtonText: { color: "#ffffff", fontSize: 18, fontWeight: "bold" },
+  nextButtonText: {
+    color: "#FFFFFF",
+    fontSize: 18,
+    fontWeight: "700",
+  },
+  buttonPlaceholder: {
+    height: "100%",
+  },
 });
