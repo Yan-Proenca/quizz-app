@@ -11,9 +11,9 @@ export default function StartScreen({
 }: StartScreenProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Quiz</Text>
+      <Text style={styles.title}>Quiz Do Contra</Text>
 
-      <Text style={styles.subtitle}>Teste seus conhecimentos!</Text>
+      <Text style={styles.subtitle}>Teste seus sabor conhecimento!</Text>
 
       <View style={styles.infoContainer}>
         <View style={styles.infoBox}>
