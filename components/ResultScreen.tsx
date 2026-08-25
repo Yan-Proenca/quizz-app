@@ -66,15 +66,15 @@ const styles = StyleSheet.create({
   scoreValue: {
     fontSize: 48,
     fontWeight: "800",
-    color: "#007AFF",
+    color: "#3f6005",
   },
   button: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#3f6005",
     paddingVertical: 16,
     width: "100%",
     borderRadius: 14,
     alignItems: "center",
-    shadowColor: "#007AFF",
+    shadowColor: "#283e02",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.25,
     shadowRadius: 8,

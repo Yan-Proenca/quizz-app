@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   infoValue: {
     fontSize: 28,
     fontWeight: "700",
-    color: "#007AFF",
+    color: "#3f6005",
   },
   infiniteText: {
     fontSize: 12,
@@ -97,12 +97,12 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   button: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#3f6005",
     paddingVertical: 16,
     width: "100%",
     borderRadius: 14,
     alignItems: "center",
-    shadowColor: "#007AFF",
+    shadowColor: "#1f2e05",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.25,
     shadowRadius: 8,
