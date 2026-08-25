@@ -1,10 +1,27 @@
+Aqui está o seu `README.md` atualizado, incorporando a nova seção detalhada com as funcionalidades recentemente desenvolvidas (Menu de Start/Tela Inicial, Layout de Ambiente com SafeArea, Navegação por Expo Router e Design System consistente), além dos desafios e aprendizados técnicos envolvidos.
+
+````markdown
+# 🧠 Quiz Mobile App
+
+Um aplicativo de Quiz dinâmico e interativo desenvolvido em **React Native**, projetado para testar conhecimentos de forma fluida, responsiva e intuitiva.
 
 ---
 
-```markdown
-# 🧠 Quiz Mobile App
+## ✨ Funcionalidades e Layouts Atualizados
 
-Um aplicativo de Quiz dinâmico e interativo desenvolvido em **React Native**, projetado para testar conhecimentos de forma fluida e intuitiva[cite: 1, 3, 4].
+### 📌 Funcionalidade Adicional: Menu de Start e Novo Layout de Ambiente
+
+- **O que faz**: O aplicativo conta com um fluxo de tela inicial (_Start Screen_) totalmente estilizado que apresenta as regras básicas (número de perguntas e tentativas) e fornece um ponto de entrada claro para o quiz.
+- **Como funciona**:
+  - **Layout de Ambiente Seguro (`_layout.tsx` e `HomePage` / `SafeAreaView`)**: O app agora utiliza um contêiner global com `SafeAreaView` e `StatusBar` configurada via Expo Router, garantindo que o layout se ajuste perfeitamente a dispositivos com _notch_, ilha dinâmica ou barras de navegação sem cortar nenhum conteúdo.
+  - **Design System Unificado**: Padronização visual com paleta de cores moderna (tons claros de fundo `#F5F5F7`, destaque azul `#007AFF`, cartões brancos elevados com sombras sutis), tipografia legível e feedback tátil em botões (`activeOpacity`).
+  - **Fluxo Dinâmico**: Ao pressionar "Iniciar Jogo", a máquina de estados altera o estágio para a tela de perguntas (`QuizScreen`), e ao final, redireciona para a tela de resultado (`ResultScreen`), permitindo reiniciar o quiz a qualquer momento.
+
+### 💡 Desafios e Aprendizados
+
+- **Safe Area & Layouts de Dispositivos Móveis**: Precisei pesquisar sobre a correta aplicação do `SafeAreaView` e da propriedade `contentStyle` no `Stack` do `expo-router` para manter uma cor de fundo uniforme em toda a aplicação sem deixar lacunas nas margens da tela do dispositivo.
+- **Consistência de Cores e Feedback Visual**: Foi necessário refatorar os estilos entre componentes (`StartScreen`, `QuizScreen`, `ResultScreen`) para eliminar conflitos de cor de fundo (como tons de verdes diferentes).
+- **Gerenciamento de Estados e Transições**: Ajustes no fluxo de estados para garantir que, ao avançar de pergunta ou resetar o jogo, a interface não sofra com saltos de layout (_layout shift_), mantendo seletores e botões alinhados.
 
 ---
 
@@ -12,10 +29,10 @@ Um aplicativo de Quiz dinâmico e interativo desenvolvido em **React Native**, p
 
 O projeto foi construído utilizando as seguintes tecnologias e ecossistema:
 
-* **[React Native](https://reactnative.dev/)**: Framework para desenvolvimento de aplicações móveis nativas usando JavaScript/TypeScript[cite: 1, 2, 3].
-* **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática ao código, garantindo mais segurança e legibilidade às props e componentes[cite: 1, 2, 3].
-* **[Expo](https://expo.dev/)** *(Recomendado/Padrão)*: Plataforma/Tooling para facilitar a criação, execução e teste de projetos React Native.
-* **StyleSheet (React Native)**: Estilização nativa para uma interface limpa, moderna e responsiva[cite: 1, 2, 3].
+- **[React Native](https://reactnative.dev/)**: Framework para desenvolvimento de aplicações móveis nativas usando JavaScript/TypeScript.
+- **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática ao código, garantindo mais segurança e legibilidade às props e componentes.
+- **[Expo](https://expo.dev/) / [Expo Router](https://docs.expo.dev/router/introduction/)**: Plataforma e roteamento baseado em arquivos para facilitar a navegação, execução e testes do aplicativo.
+- **StyleSheet (React Native)**: Estilização nativa com suporte a elevações e sombras para uma interface moderna e responsiva.
 
 ---
 
@@ -23,39 +40,44 @@ O projeto foi construído utilizando as seguintes tecnologias e ecossistema:
 
 A aplicação foi estruturada seguindo o conceito de **máquina de estados para fluxo de navegação** e **componentização reutilizável**, dividindo-se nas seguintes etapas e componentes:
 
-1. **Controle de Estado Principal (`HomePage.tsx`)**[cite: 4]:
-   * Gerencia as fases do jogo através do estado `gameStage` (`'start'` | `'quiz'` | `'result'`)[cite: 4].
-   * Mantém o estado da pergunta atual (`currentQuestionIndex`), pontuação (`score`), opção selecionada (`selectedOption`) e desativação das alternativas após a escolha (`isOptionsDisabled`)[cite: 4].
-   * Importa a lista de perguntas a partir de um arquivo JSON local (`questions.json`)[cite: 4].
+1. **Configuração de Layout e Roteamento (`app/_layout.tsx`)**:
+   - Define o container global da aplicação, estilizando a `StatusBar` nativa e garantindo o fundo uniforme `#F5F5F7` em todas as rotas.
 
-2. **Tela Inicial (`StartScreen.tsx`)**[cite: 3, 4]:
-   * Apresenta o título, boas-vindas e informações gerais como o número total de perguntas disponíveis e tentativas permitidas[cite: 3].
-   * Contém o botão de ação para iniciar a partida[cite: 3, 4].
+2. **Controle de Estado Principal (`HomePage.tsx` / `index.tsx`)**:
+   - Gerencia as fases do jogo através do estado `gameStage` (`'start'` | `'quiz'` | `'result'`).
+   - Mantém o estado da pergunta atual (`currentQuestionIndex`), pontuação (`score`), opção selecionada (`selectedOption`) e desativação das alternativas após a escolha (`isOptionsDisabled`).
+   - Importa a lista de perguntas a partir do arquivo `questions.json`.
+   - Envolve os componentes em um `SafeAreaView` para garantir a exibição perfeita em qualquer tela.
 
-3. **Tela de Perguntas (`QuizScreen.tsx`)**[cite: 1, 4]:
-   * Exibe a pergunta ativa e gera dinamicamente os botões para cada alternativa[cite: 1].
-   * **Feedback Visual Instantâneo**: Ao clicar em uma alternativa, o app destaca a resposta correta em verde e, caso o usuário tenha errado, destaca a resposta incorreta em vermelho[cite: 1].
-   * Bloqueia os botões após a seleção para evitar respostas múltiplas e exibe o botão para avançar para a próxima pergunta[cite: 1, 4].
+3. **Tela Inicial (`StartScreen.tsx`)**:
+   - Apresenta o título, boas-vindas e informações gerais como o número total de perguntas disponíveis e tentativas permitidas.
+   - Contém o botão de ação para iniciar a partida com efeito visual de toque.
 
-4. **Tela de Resultado (`ResultScreen.tsx`)**[cite: 2, 4]:
-   * Exibe o placar final detalhando quantas perguntas o usuário acertou do total[cite: 2].
-   * Disponibiliza a opção de reiniciar o jogo e tentar novamente[cite: 2, 4].
+4. **Tela de Perguntas (`QuizScreen.tsx`)**:
+   - Exibe a pergunta ativa dentro de um cartão destacado e gera dinamicamente as opções de resposta.
+   - **Feedback Visual Instantâneo**: Ao clicar em uma alternativa, destaca a resposta correta em verde e, caso o usuário erre, em vermelho.
+   - Bloqueia os botões após a seleção para evitar respostas múltiplas e exibe o botão para avançar para a próxima pergunta.
+
+5. **Tela de Resultado (`ResultScreen.tsx`)**:
+   - Exibe a pontuação final de forma clara e destacada em um cartão de resumo.
+   - Disponibiliza a opção de reiniciar o jogo e tentar novamente.
 
 ---
 
 ## 📂 Estrutura de Arquivos
 
 ```text
+├── app/
+│   ├── _layout.tsx       # Configuração de layout global e StatusBar (Expo Router)
+│   └── index.tsx         # Página principal / Gerenciador de estados (HomePage)
 ├── components/
-│   ├── StartScreen.tsx   # Tela inicial de boas-vindas
+│   ├── StartScreen.tsx   # Tela inicial do jogo
 │   ├── QuizScreen.tsx    # Tela das perguntas e alternativas
 │   └── ResultScreen.tsx  # Tela de encerramento e pontuação
-├── pages/ (ou app/)
-│   └── HomePage.tsx      # Componente principal / Gerenciador de estados
 ├── questions.json        # Base de dados com as perguntas e respostas
 └── README.md             # Documentação do projeto
-
 ```
+````
 
 ---
 
@@ -67,30 +89,31 @@ Siga os passos abaixo para rodar o aplicativo localmente em seu computador.
 
 Certifique-se de ter instalado em sua máquina:
 
-* **[Node.js](https://nodejs.org/)** (versão LTS recomendada)
-* **[Git](https://git-scm.com/)**
-* Gerenciador de pacotes **npm** ou **yarn**
-* Aplicativo **Expo Go** instalado no seu celular (iOS ou Android) *para testar em dispositivo físico*.
+- **[Node.js](https://nodejs.org/)** (versão LTS recomendada)
+- **[Git](https://git-scm.com/)**
+- Gerenciador de pacotes **npm** ou **yarn**
+- Aplicativo **Expo Go** instalado no seu celular (iOS ou Android) _para testar em dispositivo físico_.
 
 ---
 
 ### 📥 Passos para Instalação
 
 1. **Clone o repositório:**
+
 ```bash
 git clone [https://github.com/seu-usuario/seu-repositorio-quiz.git](https://github.com/seu-usuario/seu-repositorio-quiz.git)
 
 ```
 
-
 2. **Acesse a pasta do projeto:**
+
 ```bash
 cd seu-repositorio-quiz
 
 ```
 
-
 3. **Instale as dependências:**
+
 ```bash
 npm install
 # ou
@@ -98,8 +121,8 @@ yarn install
 
 ```
 
-
 4. **Inicie o servidor de desenvolvimento:**
+
 ```bash
 npx expo start
 # ou
@@ -107,26 +130,22 @@ npm start
 
 ```
 
-
-
 ---
 
 ### 📱 Como Visualizar o App
 
 Após rodar o comando de início, um **QR Code** será exibido no seu terminal ou no navegador:
 
-* **Dispositivo Físico (Celular)**:
+- **Dispositivo Físico (Celular)**:
+
 1. Abra o aplicativo **Expo Go** no seu celular.
 2. Escaneie o QR Code exibido no terminal.
 3. O aplicativo carregará no seu aparelho!
 
-
-* **Emuladores / Simuladores**:
-* Pressione `a` no terminal para abrir no emulador **Android**.
-* Pressione `i` no terminal para abrir no simulador **iOS** (apenas macOS).
-* Pressione `w` no terminal para rodar a versão **Web**.
-
-
+- **Emuladores / Simuladores**:
+- Pressione `a` no terminal para abrir no emulador **Android**.
+- Pressione `i` no terminal para abrir no simulador **iOS** (apenas macOS).
+- Pressione `w` no terminal para rodar a versão **Web**.
 
 ---
 
@@ -142,4 +161,8 @@ Para adicionar ou alterar as perguntas do aplicativo, basta modificar o arquivo 
     "correctAnswer": "Brasília"
   }
 ]
+```
 
+```
+
+```
