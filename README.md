@@ -82,9 +82,9 @@ A aplicação foi estruturada seguindo o conceito de **máquina de estados para 
 
 
 
-[iPhone-13-PRO-localhost-b81_xznnwa--p4.webm](https://github.com/user-attachments/assets/4523e340-c116-4ef6-8e94-63ef68205c0c)
 
 ````
+<img width="505" height="906" alt="image" src="https://github.com/user-attachments/assets/f5af6184-748e-4d77-9ce6-b16f8dbbb2d1" />
 
 ---
 
